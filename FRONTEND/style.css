@@ -651,6 +651,180 @@ text-align: center;
 
 
 
+/* ----------------------------------FOOTER---------------------------------------- */
+ footer {
+        position: absolute;
+        width: 100%;
+        background-color: #f5f5f5;
+        bottom: 0;
+        overflow: hidden;
+    }
+    .footmain {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+        width: 100%;
+    }
+    .foot_logo {
+        height: 0;
+        width: 0;
+        border-top: 12rem solid #1c57aa;
+        border-right: 8rem solid #1c57aa;
+        border-bottom: 8rem solid transparent;
+        border-left: 8rem solid #1c57aa;
+        position: relative;
+        margin-right:2rem;
+        margin-left: 1rem;
+    }
+    .foot_logo img {
+        width: 15rem;
+        position: absolute;
+        left:-7.5rem;
+        top:-7rem
+    }
+    .foot_add {
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+        margin-right: 1rem;
+    }
+    .foot_address, .foot_reg, .foot_student, .foot_Facilities {
+        flex: 1;
+        padding: 1rem;
+    }
+    .foot_heading {
+        color: #1152ae;
+        font-size: x-large;
+        margin-bottom: 0.5rem;
+        transition: color 0.3s;
+    }
+    .foot_heading::after {
+        content: '';
+        display: block;
+        width: 40px;
+        height: 2px;
+        background-color: black;
+        margin-top: 0.3rem;
+        transition: width 0.3s, background-color 0.3s;
+    }
+    .foot_heading:hover::after {
+        width: 70px;
+        background-color: #1152ae;
+    }
+    .foot_heading:hover {
+        color: black;
+    }
+    .foot_content {
+        line-height: 1.8;
+    }
+    .foot_directions{
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+    }
+    /* From Uiverse.io by xopc333 */ 
+    .social-icons{
+        display: flex;
+        justify-content: center;
+    }
+    .social-icons a{
+        padding-left: 1.3rem;
+    }
+    .social-icons i{
+        font-size: 1.5rem;
+        color: #1152ae;
+    }
+.Reach_button {
+  display: block;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  overflow: hidden;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+  rotate:180deg;
+}
+footer a{
+    text-decoration: none;
+    color: black;
+}
+.Reach_button:before,
+.Reach_button:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 0.2rem;
+}
+
+.Reach_button:before {
+  border: 2px solid black;
+  transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+.Reach_button:after {
+  border: 3px solid #1152ae;
+  fill:#1152ae;
+  transform: scale(1.3);
+  transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0;
+}
+.Reach_button:hover:before,
+.Reach_button:focus:before {
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.Reach_button:hover:after,
+.Reach_button:focus:after {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+.Reach_button-box {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.Reach_button-elem {
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin: 11px 0 0 13px;
+  transform: rotate(180deg);
+  fill: black;
+}
+
+.Reach_button:hover .Reach_button-box,
+.Reach_button:focus .Reach_button-box {
+  transition: 0.4s;
+  transform: translateX(-30px);
+}
+
+    .copyright {
+        color: #1152ae;
+        text-align: center;
+        padding-bottom: 0.5rem;
+        font-size: 1rem;
+    }
+    .foot_bottom{
+        border-top: 2px solid #1152ae;
+        padding-top:5px;
+        background-color: whitesmoke;
+        box-shadow: 1rem 1rem 1rem solid black;
+    }
+
+
 
 /* --------------RESPONSIVE RULE & REGULATION------------------------ */
 
