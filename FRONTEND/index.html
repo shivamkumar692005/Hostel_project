@@ -6,8 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
@@ -15,7 +20,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
     rel="stylesheet">
-    
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -23,8 +32,52 @@
 
   <!----------------------------------------------- COMPLAINT -------------------------------->
   <div class="anc-btn">
-    <button id="toggleBtn">Complaints</button>
-    <button id="toggleBtn" class="anc-btn1">Announcements</button>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      COMPLAINT
+    </button>
+    <button id="toggleBtn" class="btn btn-primary anc-btn1">Announcements</button>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">COMPLAINT</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="/hii" method="post">
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="mb-3">
+                <label class="form-label" for="room">Room No: </label>
+                <input type="text" id="room" name="Room-No" placeholder="Enter Room no" required class="form-control">
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label" for="Floor">Floor No:</label>
+                <input type="text" id="Floor" name="Floor-No" placeholder="Enter floor no" required
+                  class="form-control">
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label" for="description">description: </label>
+                <textarea id="description" name="listing[description]" placeholder="description"
+                  class="form-control"> </textarea>
+              </div>
+              <div class="input-group">
+                <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04"
+                  aria-label="Upload">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
   <div class="side">
     <div class="anc-item">
@@ -40,40 +93,36 @@
                   <path d="M0 0h24v24H0z" fill="none" />
                   <path
                     d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 9h-2V5h2v6zm0 4h-2v-2h2v2z" />
-                </svg></span>new Add</a></li>
+                </svg></span>New addmisson file content hii </a></li>
           <li><a href="#"><span><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
                   <path d="M0 0h24v24H0z" fill="none" />
                   <path
                     d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 9h-2V5h2v6zm0 4h-2v-2h2v2z" />
-                </svg></span>new Add</a></li>
+                </svg></span>New addmisson file content hii </a></li>
           <li><a href="#"><span><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
                   <path d="M0 0h24v24H0z" fill="none" />
                   <path
                     d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 9h-2V5h2v6zm0 4h-2v-2h2v2z" />
-                </svg></span>new Add</a></li>
+                </svg></span>New addmisson file content hii </a></li>
           <li><a href="#"><span><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
                   <path d="M0 0h24v24H0z" fill="none" />
                   <path
                     d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 9h-2V5h2v6zm0 4h-2v-2h2v2z" />
-                </svg></span>new Add</a></li>
+                </svg></span>New addmisson file content hii </a></li>
           <li><a href="#"><span><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
                   <path d="M0 0h24v24H0z" fill="none" />
                   <path
                     d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 9h-2V5h2v6zm0 4h-2v-2h2v2z" />
-                </svg></span>new Add</a></li>
+                </svg></span>New addmisson file content hii </a></li>
           <li><a href="#"><span><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
                   <path d="M0 0h24v24H0z" fill="none" />
                   <path
                     d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 9h-2V5h2v6zm0 4h-2v-2h2v2z" />
-                </svg></span>new Add</a></li>
+                </svg></span>New addmisson file content hii </a></li>
         </ul>
       </div>
     </div>
   </div>
-
-
-
-
 
   <!-- NAVBAR -->
 
@@ -81,7 +130,11 @@
     <section>
       <nav class="nav-bar">
         <div class="nav-logo">
-          <img src="public/logo.png">
+          <picture>
+            <source media="(min-width:989px)" srcset="public/logo.png">
+            <source media="(min-width:620px)" srcset="public/logo.png">
+            <img src="public/logo.png" alt="Flowers" style="width:auto;">
+          </picture>
         </div>
 
         <div class="nav-link">
@@ -97,8 +150,24 @@
         <div class="nav-button">
           <button>Login</button>
         </div>
+        <div class="toggle">
+          <i class="ri-menu-line nav-toggle-btn"></i>
+        </div>
       </nav>
     </section>
+    <div class="toggle-nav-link ">
+      <h2><i class="ri-close-fill nav-toggle-btn"></i></h2>
+      <ul>
+        <li><a href="/FRONTEND2/index.html">Home</a></li>
+        <li><a href="#">Hostel Life</a></li>
+        <li><a href="#">Booking</a></li>
+        <li><a href="#">Facility</a></li>
+        <li><a href="#">contact us</a></li>
+        <div class="toggle-nav-button">
+          <button>Login</button>
+        </div>
+      </ul>
+    </div>
   </div>
 
 
@@ -106,7 +175,7 @@
   <div class="slide-container">
     <div class="slides activeSlide" attr="0">
       <div class="img-container">
-        <img src="public/slide1.jpeg">
+        <img src="public/slide_1 (2).jpg">
       </div>
       <div class="slide-text">
         <h1>Welcome to our Hostel</h1>
@@ -116,7 +185,7 @@
     </div>
     <div class="slides" attr="1">
       <div class="img-container">
-        <img src="public/slide2-transformed.jpeg">
+        <img src="public/slide_2 (2).jpg">
       </div>
       <div class="slide-text">
         <h1>Welcome to our Hostel</h1>
@@ -126,7 +195,7 @@
     </div>
     <div class="slides" attr="2">
       <div class="img-container">
-        <img src="public/slide3.jpeg">
+        <img src="public/slide_3.jpg">
       </div>
       <div class="slide-text">
         <h1>Welcome to our Hostel</h1>
@@ -136,7 +205,7 @@
     </div>
     <div class="slides" attr="3">
       <div class="img-container">
-        <img src="public/slide4.jpeg">
+        <img src="public/silde_4 (2).jpg">
       </div>
       <div class="slide-text">
         <h1>Welcome to our Hostel</h1>
@@ -146,7 +215,7 @@
     </div>
     <div class="slides" attr="4">
       <div class="img-container">
-        <img src="public/slide5.jpeg">
+        <img src="public/slide_5.jpg">
       </div>
       <div class="slide-text">
         <h1>Welcome to our Hostel</h1>
@@ -156,7 +225,7 @@
     </div>
     <div class="slides" attr="5">
       <div class="img-container">
-        <img src="public/slide6.jpeg">
+        <img src="public/silde_6 (2).jpg">
       </div>
       <div class="slide-text">
         <h1>Welcome to our Hostel</h1>
@@ -181,22 +250,15 @@
   </div>
 
   <!-- ABOUT US -->
-  <div class="about" style="padding: 10rem 5rem 0 5rem">
+  <div class="about" style="padding: 10rem 3rem 0 3rem">
     <h1 style="color: #1152ae; text-align: center; margin-bottom: 2rem;">ABOUT US</h1>
-    <p>Lorem ipsum dolor sit am Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos obcaecati harum, est
-      doloremque, eius saepe asperiores natus quis hic nam adipisci veritatis! Aspernatur, est velit? Doloremque
-      expedita atque dese runt perferendis?lor Lorem, ipsum dolor. et consectetur adipisicing elit. Voluptate sequi
-      reiciendis minus ess Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi, ducimus eaque! Nemo esse
-      sint facilis aliquid. Harum provident dolorum adipisci aliquam, dolore voluptatibus laboriosam nemo totam sint
-      nulla molestias et. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis deserunt vero fugit dicta
-      tempore minus quis temporibus ut libero illo aspernatur repellat mollitia ducimus soluta, doloribus dolorum quod
-      aut. Corrupti. e adipisci ut, at harum cupiditate minima, pariatur sunt maiores tempore. In doloribus rem
-      corporis ab natus eius!</p>
+    <p style="text-align: center; font-family: Lora, serif; font-weight: 600;">
+      Our hostel is a place where you can feel at home. We have a team of experienced staff who
+      All candidates should be present in the Examination Hall 15 minutes before the time of commencement of Examinations. No student will be allowed into examination hall after that time.
+Students has to 
+    </p>
   </div>
-
-
-
-
+ 
 
 
 
@@ -244,34 +306,34 @@
         <div class="fCard-img">
           <img src="/FRONTEND/public/f1.png">
         </div>
-       
-          <h2>CCTV Servaliance</h2>
-       
+
+        <h2>CCTV Servaliance</h2>
+
       </div>
       <div class="fCard">
         <div class="fCard-img">
           <img src="/FRONTEND/public/f2.png">
         </div>
-       
-          <h2>CCTV Servaliance</h2>
-       
+
+        <h2>Library</h2>
+
       </div>
       <div class="fCard">
         <div class="fCard-img">
           <img src="/FRONTEND/public/f3.png">
         </div>
-       
-          <h2>CCTV Servaliance</h2>
-       
+
+        <h2>Hospital</h2>
+
       </div>
 
       <div class="fCard">
         <div class="fCard-img">
           <img src="/FRONTEND/public/f4.png">
         </div>
-       
-          <h2>CCTV Servaliance</h2>
-       
+
+        <h2>More</h2>
+
       </div>
     </div>
   </div>
@@ -357,91 +419,146 @@
       <li>Keep the hostel premises clean and tidy.</li>
     </ul>
   </div>
-<!------------------------FOOTER------------------------>
+
+
+  <!---------------------------------- REVIEW --------------------------->
+  
+
+  <!------------------------------ FAQS ------------------------------>
+  <div class="faq-container">
+    <h1>FAQS</h1>
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>What is HTML?</span>
+            <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+            <p>HTML stands for HyperText Markup Language. It is the standard language for creating web pages.</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>What is CSS?</span>
+            <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+            <p>CSS stands for Cascading Style Sheets. It is used to style and layout web pages.</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>What is JavaScript?</span>
+            <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+            <p>JavaScript is a programming language that enables interactive web pages. It is an essential part of web applications.</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>What is a web browser?</span>
+            <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+            <p>A web browser is a software application for accessing information on the World Wide Web.</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>What is a web server?</span>
+            <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+            <p>A web server is a computer system that hosts websites and delivers web pages to users over the Internet.</p>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- /*-------------------------------------- Foootter ------------------------------------*/ -->
 <footer>
-        <div class="footmain">
-            <div class="foot_logo">
-                <img src="logo.png" alt="Logo">
-            </div>
-            <div class="foot_add">
-                <div class="foot_address">
-                    <span class="foot_heading">Reach us</span>
-                    <div class="foot_content">
-                        Vignan's University, Vadlamudi,<br>Guntur-522213, Andhra Pradesh,<br>India  
-                    </div>
-                    <span class="foot_heading">Contact us</span>
-                    <div class="foot_content">
-                        <i class="fa-solid fa-phone"></i> +91-863-2344777 / 86 <br>
-                        <i class="fa-solid fa-phone"></i> +91-7093144415<br>
-                        <i class="fa-solid fa-phone"></i> 1800-425-2529
-                    </div>
-                    <div class="foot_directions">
-                        <a href="directions.html">How to reach us</a>
-                        <button class="Reach_button">
-                            <div class="Reach_button-box">
-                              <span class="Reach_button-elem">
-                                <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
-                                  <path
-                                    d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
-                                  ></path>
-                                </svg>
-                              </span>
-                              <span class="Reach_button-elem">
-                                <svg viewBox="0 0 46 40">
-                                  <path
-                                    d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
-                                  ></path>
-                                </svg>
-                              </span>
-                            </div>
-                          </button>                          
-                    </div> 
-                </div>
-                <div class="foot_reg">
-                    <span class="foot_heading">Registration</span>
-                    <div class="foot_content">
-                        content<br>
-                        content<br>
-                        content<br>
-                        content<br>
-                        content<br>
-                        content<br>
-                    </div>
-                </div>
-                <div class="foot_student">
-                    <span class="foot_heading">Student</span>
-                    <div class="foot_content">
-                        <a href="#id">My Profile</a><br>
-                        content<br>
-                        content<br>
-                        content<br>
-                        content<br>
-                        <a href="#id">Feedbacks</a><br>
-                    </div>
-                </div>
-                <div class="foot_Facilities">
-                    <span class="foot_heading">Facility</span>
-                    <div class="foot_content">
-                        content<br>
-                        content<br>
-                        content<br>
-                        content<br>
-                        content<br>
-                        content<br>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="foot_bottom">
-            <div class="copyright">Copyrights © 2024 VFSTR. All rights reserved.</div>
-            <div class="social-icons">
-               <a href="https://x.com/VFSTR_Vignan/status/1828998287279689856" target="_blank"> <i class="fa-brands fa-twitter"></i></a>
-               <a href="https://www.instagram.com/vignanuniversityofficial/" target="_blank"> <i class="fa-brands fa-instagram"></i></a>
-               <a href="https://www.youtube.com/@VignanUniversityAP" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-               <a href="https://www.facebook.com/vignanuniversityofficial/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-            </div>
-        </div>
-    </footer>
+  <div class="footmain">
+      <img src="public/foot_logo-removebg-preview.png" alt="Logo">
+          <div class="foot_address">
+              <div class="foot_content1">
+                  <span class="foot_heading">Reach us</span>
+                  Vignan's University, Vadlamudi,<br>Guntur-522213, Andhra Pradesh,<br>India  
+              </div>
+              <div class="foot_content">
+                  <span class="foot_heading">Contact us</span>
+                  <i class="fa-solid fa-phone"></i> +91-863-2344777 / 86 <br>
+                  <i class="fa-solid fa-phone"></i> +91-7093144415<br>
+                  <i class="fa-solid fa-phone"></i> 1800-425-2529
+                  <div class="foot_directions">
+                      <a href="directions.html">How to reach us</a>
+                      <button class="Reach_button">
+                          <div class="Reach_button-box">
+                          <span class="Reach_button-elem">
+                              <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                  d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+                              ></path>
+                              </svg>
+                          </span>
+                          <span class="Reach_button-elem">
+                              <svg viewBox="0 0 46 40">
+                              <path
+                                  d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+                              ></path>
+                              </svg>
+                          </span>
+                          </div>
+                      </button>                          
+                  </div> 
+              </div>
+          </div>
+          <div class="foot_reg">
+              <span class="foot_heading">Registration</span>
+              <div class="foot_content">
+                  content<br>
+                  content<br>
+                  content<br>
+                  content<br>
+                  content<br>
+                  content<br>
+              </div>
+          </div>
+          <div class="foot_student">
+              <span class="foot_heading">Student</span>
+              <div class="foot_content">
+                  <a href="#id">My Profile</a><br>
+                  content<br>
+                  content<br>
+                  content<br>
+                  content<br>
+                  <a href="#id">Feedbacks</a><br>
+              </div>
+          </div>
+          <div class="foot_Facilities">
+              <span class="foot_heading">Facility</span>
+              <div class="foot_content">
+                  content<br>
+                  content<br>
+                  content<br>
+                  content<br>
+                  content<br>
+                  content<br>
+              </div>
+          </div>
+
+  </div>
+  <div class="foot_bottom">
+      <div class="copyright">Copyrights © 2024 VFSTR. All rights reserved.</div>
+      <div class="social-icons">
+         <a href="https://x.com/VFSTR_Vignan/status/1828998287279689856" target="_blank"> <i class="fa-brands fa-twitter"></i></a>
+         <a href="https://www.instagram.com/vignanuniversityofficial/" target="_blank"> <i class="fa-brands fa-instagram"></i></a>
+         <a href="https://www.youtube.com/@VignanUniversityAP" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+         <a href="https://www.facebook.com/vignanuniversityofficial/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      </div>
+  </div>
+</footer>
+
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
@@ -450,7 +567,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
     integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="/FRONTEND/app.js"></script>
+  <script>
+    if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
+        window.location.href = '/';
+    }
+</script>
 
 </body>
 

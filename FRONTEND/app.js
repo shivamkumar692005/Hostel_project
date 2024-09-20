@@ -9,8 +9,19 @@ let counter = 0;
 let autoSlideInterval;
 let animating = false; // Track  animation is in progress
 
+// <-----------------------------NAVBAR --------------------------------------->
+
+const navToggleBtn = document.querySelectorAll(".nav-toggle-btn");
+for(let btn of navToggleBtn) {
+  btn.addEventListener("click", () => {
+    console.log("hii");
+    document.querySelector(".toggle-nav-link").classList.toggle("toggle-right");
+  })
+  
+}
 
 
+// <----------------------------Announcment ----------------------->
 document.querySelectorAll('.anc-btn1').forEach(button => {
   button.addEventListener('click', function() {
     this.classList.toggle("open1"); 
@@ -211,7 +222,7 @@ gsap.from(".outer-container .container #card1", {
         trigger:".outer-container .container #card1",
         scroller:"body",
         start:"top 60%",
-        end:"top 0",
+        end:"top 30%",
         // markers:true,
         scrub:1
       }      
@@ -227,7 +238,7 @@ gsap.from(".outer-container .container #card3", {
         trigger:".outer-container .container #card3",
         scroller:"body",
         start:"top 60%",
-        end:"top 0",
+        end:"top 30%",
         // markers:true,
         scrub:1
       }      
@@ -241,7 +252,7 @@ gsap.from(".outer-container .container #card2", {
         trigger:".outer-container .container #card2",
         scroller:"body",
         start:"top 60%",
-        end:"top 0",
+        end:"top 30%",
         // markers:true,
         scrub:2
       }      
@@ -257,7 +268,7 @@ gsap.from(".not .container #card4", {
         trigger:".not .container #card4",
         scroller:"body",
         start:"top 60%",
-        end:"top 0",
+        end:"top 30%",
         // markers:true,
         scrub:1
       }      
@@ -273,8 +284,7 @@ gsap.from(".not .container #card6", {
         trigger:".not .container #card6",
         scroller:"body",
         start:"top 60%",
-        end:"top 0",
-
+        end:"top 30%",
         scrub:1
       }      
 })
@@ -287,11 +297,44 @@ gsap.from(".not .container #card5", {
         trigger:".not .container #card5",
         scroller:"body",
         start:"top 60%",
-        end:"top 0",
-
+        end:"top 30%",
         scrub:2
       }      
 })
+
+
+// <!------------------------------ FAQS ------------------------------>
+document.addEventListener('DOMContentLoaded', function() {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+
+  faqQuestions.forEach(question => {
+      question.addEventListener('click', function() {
+          const faqItem = this.closest('.faq-item');
+          const answer = faqItem.querySelector('.faq-answer');
+          const isOpen = faqItem.classList.contains('active');
+
+          // Close all other open items
+          document.querySelectorAll('.faq-item.active').forEach(item => {
+              if (item !== faqItem) {
+                  item.classList.remove('active');
+                  item.querySelector('.faq-answer').style.maxHeight = null;
+                  item.querySelector('.faq-toggle').textContent = '+';
+              }
+          });
+
+          // Toggle the current item
+          if (isOpen) {
+              faqItem.classList.remove('active');
+              answer.style.maxHeight = null;
+              faqItem.querySelector('.faq-toggle').textContent = '+';
+          } else {
+              faqItem.classList.add('active');
+              answer.style.maxHeight = answer.scrollHeight + "px";
+              faqItem.querySelector('.faq-toggle').textContent = '-';
+          }
+      });
+  });
+});
 
 
 
