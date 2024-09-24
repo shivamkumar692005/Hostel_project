@@ -12,31 +12,20 @@ let animating = false; // Track  animation is in progress
 // <-----------------------------NAVBAR --------------------------------------->
 
 const navToggleBtn = document.querySelectorAll(".nav-toggle-btn");
-for(let btn of navToggleBtn) {
+for (let btn of navToggleBtn) {
   btn.addEventListener("click", () => {
     console.log("hii");
     document.querySelector(".toggle-nav-link").classList.toggle("toggle-right");
-  })
-  
+  });
 }
 
-
 // <----------------------------Announcment ----------------------->
-document.querySelectorAll('.anc-btn1').forEach(button => {
-  button.addEventListener('click', function() {
-    this.classList.toggle("open1"); 
-    document.querySelector('.side').classList.toggle('open');
+document.querySelectorAll(".anc-btn1").forEach((button) => {
+  button.addEventListener("click", function () {
+    this.classList.toggle("open1");
+    document.querySelector(".side").classList.toggle("open");
   });
 });
-
-
-
-
-
-
-
-
-
 
 // animate text elements
 function animateText() {
@@ -211,138 +200,157 @@ for (let dot of dots) {
   });
 }
 
+// Listen for keyboard arrow key presses
+document.addEventListener("keydown", function (event) {
+  if (event.key === "ArrowRight") {
+    slideNext();
+  } else if (event.key === "ArrowLeft") {
+    slidePrev();
+  }
+});
 
+// ?lissten for mobile swip
+let startX = 0;
+let endX = 0;
+let threshold = 50;
 
+let slideCont = document.querySelector(".slide-container");
 
+slideCont.addEventListener("touchstart", function (event) {
+  startX = event.touches[0].clientX;
+});
+
+slideCont.addEventListener("touchmove", function (event) {
+  endX = event.touches[0].clientX;
+});
+
+slideCont.addEventListener("touchend", function () {
+  let distance = endX - startX;
+
+  if (Math.abs(distance) > threshold) {
+    if (distance < 0) {
+      slideNext();  // Swipe left to trigger next slide
+    } else {
+      slidePrev();  // Swipe right to trigger previous slide
+    }
+  }
+});
+
+// CARDS ANIMATION
 gsap.from(".outer-container .container #card1", {
   duration: 0.8,
   x: -70,
-  opacity:0,
-  scrollTrigger:{
-        trigger:".outer-container .container #card1",
-        scroller:"body",
-        start:"top 60%",
-        end:"top 30%",
-        // markers:true,
-        scrub:1
-      }      
-})
-
-
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".outer-container .container #card1",
+    scroller: "body",
+    start: "top 60%",
+    end: "top 30%",
+    // markers:true,
+    scrub: 1,
+  },
+});
 
 gsap.from(".outer-container .container #card3", {
   duration: 0.8,
   x: 70,
-  opacity:0,
-  scrollTrigger:{
-        trigger:".outer-container .container #card3",
-        scroller:"body",
-        start:"top 60%",
-        end:"top 30%",
-        // markers:true,
-        scrub:1
-      }      
-})
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".outer-container .container #card3",
+    scroller: "body",
+    start: "top 60%",
+    end: "top 30%",
+    // markers:true,
+    scrub: 1,
+  },
+});
 
 gsap.from(".outer-container .container #card2", {
   duration: 0.8,
   y: 60,
-  opacity:0,
-  scrollTrigger:{
-        trigger:".outer-container .container #card2",
-        scroller:"body",
-        start:"top 60%",
-        end:"top 30%",
-        // markers:true,
-        scrub:2
-      }      
-})
-
-
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".outer-container .container #card2",
+    scroller: "body",
+    start: "top 60%",
+    end: "top 30%",
+    // markers:true,
+    scrub: 2,
+  },
+});
 
 gsap.from(".not .container #card4", {
   duration: 0.8,
   x: -70,
-  opacity:0,
-  scrollTrigger:{
-        trigger:".not .container #card4",
-        scroller:"body",
-        start:"top 60%",
-        end:"top 30%",
-        // markers:true,
-        scrub:1
-      }      
-})
-
-
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".not .container #card4",
+    scroller: "body",
+    start: "top 60%",
+    end: "top 30%",
+    // markers:true,
+    scrub: 1,
+  },
+});
 
 gsap.from(".not .container #card6", {
   duration: 0.8,
   x: 70,
-  opacity:0,
-  scrollTrigger:{
-        trigger:".not .container #card6",
-        scroller:"body",
-        start:"top 60%",
-        end:"top 30%",
-        scrub:1
-      }      
-})
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".not .container #card6",
+    scroller: "body",
+    start: "top 60%",
+    end: "top 30%",
+    scrub: 1,
+  },
+});
 
 gsap.from(".not .container #card5", {
   duration: 0.8,
   y: 60,
-  opacity:0,
-  scrollTrigger:{
-        trigger:".not .container #card5",
-        scroller:"body",
-        start:"top 60%",
-        end:"top 30%",
-        scrub:2
-      }      
-})
-
-
-// <!------------------------------ FAQS ------------------------------>
-document.addEventListener('DOMContentLoaded', function() {
-  const faqQuestions = document.querySelectorAll('.faq-question');
-
-  faqQuestions.forEach(question => {
-      question.addEventListener('click', function() {
-          const faqItem = this.closest('.faq-item');
-          const answer = faqItem.querySelector('.faq-answer');
-          const isOpen = faqItem.classList.contains('active');
-
-          // Close all other open items
-          document.querySelectorAll('.faq-item.active').forEach(item => {
-              if (item !== faqItem) {
-                  item.classList.remove('active');
-                  item.querySelector('.faq-answer').style.maxHeight = null;
-                  item.querySelector('.faq-toggle').textContent = '+';
-              }
-          });
-
-          // Toggle the current item
-          if (isOpen) {
-              faqItem.classList.remove('active');
-              answer.style.maxHeight = null;
-              faqItem.querySelector('.faq-toggle').textContent = '+';
-          } else {
-              faqItem.classList.add('active');
-              answer.style.maxHeight = answer.scrollHeight + "px";
-              faqItem.querySelector('.faq-toggle').textContent = '-';
-          }
-      });
-  });
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".not .container #card5",
+    scroller: "body",
+    start: "top 60%",
+    end: "top 30%",
+    scrub: 2,
+  },
 });
 
+// <!------------------------------ FAQS ------------------------------>
+document.addEventListener("DOMContentLoaded", function () {
+  const faqQuestions = document.querySelectorAll(".faq-question");
 
+  faqQuestions.forEach((question) => {
+    question.addEventListener("click", function () {
+      const faqItem = this.closest(".faq-item");
+      const answer = faqItem.querySelector(".faq-answer");
+      const isOpen = faqItem.classList.contains("active");
 
+      // Close all other open items
+      document.querySelectorAll(".faq-item.active").forEach((item) => {
+        if (item !== faqItem) {
+          item.classList.remove("active");
+          item.querySelector(".faq-answer").style.maxHeight = null;
+          item.querySelector(".faq-toggle").textContent = "+";
+        }
+      });
 
-
-
-
-
+      // Toggle the current item
+      if (isOpen) {
+        faqItem.classList.remove("active");
+        answer.style.maxHeight = null;
+        faqItem.querySelector(".faq-toggle").textContent = "+";
+      } else {
+        faqItem.classList.add("active");
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        faqItem.querySelector(".faq-toggle").textContent = "-";
+      }
+    });
+  });
+});
 
 // gsap.from(".outer-container .container #card1", {
 //   duration: 0.2,
