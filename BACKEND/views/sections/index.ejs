@@ -1,0 +1,19 @@
+<% layout("/layouts/boilerplate") %>
+
+<body>
+    
+    <%- include("../includes/home/imageSlider.ejs") %>
+    <%- include("../includes/home/aboutUs.ejs") %>
+    <%- include("../includes/home/registeration.ejs") %>
+    <%- include("../includes/home/facility.ejs") %>
+    <%- include("../includes/home/hostelLife.ejs") %>
+    <%- include("../includes/home/placmentSlider.ejs") %>
+    <%- include("../includes/home/rules.ejs") %>
+    <%- include("../includes/home/faqs.ejs") %>
+    
+   <script>
+  if (performance.getEntriesByType("navigation")[0].type === "reload") {
+            window.location.href = '/';
+        }
+        </script>
+</body>

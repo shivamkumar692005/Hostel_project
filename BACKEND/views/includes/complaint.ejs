@@ -1,0 +1,164 @@
+<div class="anc-btn">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      COMPLAINT
+    </button>
+    <button id="toggleBtn" class="btn btn-primary anc-btn1">Announcements</button>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">COMPLAINT</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="/complain" method="post" enctype="multipart/form-data">
+          <div class="modal-body">
+            <div class="container-fluid">
+              <!-- Name field -->
+              <div class="mb-3">
+                <label class="form-label" for="name">Name </label>
+                <input type="text" id="name" name="complaint[name]" placeholder="Enter Your Name" required
+                  class="form-control">
+              </div>
+
+              <!-- Registration number field -->
+              <div class="mb-3">
+                <label class="form-label" for="rno">Redg No:</label>
+                <input type="text" id="rno" name="complaint[redgno]" placeholder="Enter Registration no" required
+                  class="form-control">
+              </div>
+
+              <!-- Dropdowns for buildings, problems, and sub-problems -->
+              <div class="mb-3">
+                <div class="row g-2">
+                  <div class="dropup-center dropend col-12 col-md-12">
+                    <button type="button" class="btn btn-primary dropdown-toggle" id="building"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      Buildings
+                    </button>
+                    <ul class="dropdown-menu" id="buildinglist">
+                      <li><a class="dropdown-item building-link" href="#">Ananya Arcade</a></li>
+                      <li><a class="dropdown-item building-link" href="#">Ananya Paradise</a></li>
+                      <li><a class="dropdown-item building-link" href="#">Ananya Residency</a></li>
+                      <li><a class="dropdown-item building-link" href="#">SP Residency</a></li>
+                      <li><a class="dropdown-item building-link" href="#">RR Plaza</a></li>
+                      <li><a class="dropdown-item building-link" href="#">KM Residency</a></li>
+                      <li><a class="dropdown-item building-link" href="#">Vignan Main Hostel</a></li>
+                      <li><a class="dropdown-item building-link" href="#">Bezawada Enclave</a></li>
+                      <li><a class="dropdown-item building-link" href="#">SR Residency</a></li>
+                      <li><a class="dropdown-item building-link" href="#">Ananya Avenue</a></li>
+                    </ul>
+                    <input type="hidden" id="selectedBuilding" name="complaint[building]" />
+                  </div>
+
+                  <div class="dropup-center dropend col-6 col-md-6">
+                    <button type="button" class="btn btn-primary dropdown-toggle" id="problem" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      Problems
+                    </button>
+                    <ul class="dropdown-menu" id="problemlist">
+                      <li><a class="dropdown-item problem-link" href="#">Mess</a></li>
+                      <li><a class="dropdown-item problem-link" href="#">Hygiene</a></li>
+                      <li><a class="dropdown-item problem-link" href="#">Infranstructure</a></li>
+                      <li><a class="dropdown-item problem-link" href="#">Laundary</a></li>
+                    </ul>
+                    <input type="hidden" id="selectedProblem" name="complaint[problem]" />
+                  </div>
+
+                  <div class="dropup-center dropstart col-6 col-md-6">
+                    <button type="button" class="btn btn-primary dropdown-toggle" id="subProbelem"
+                      data-bs-toggle="dropdown" aria-expanded="false" disabled>
+                      Sub-Problem
+                    </button>
+                    <ul class="dropdown-menu" id="subProbelemlist"></ul>
+                    <input type="hidden" id="selectedSubProblem" name="complaint[subProblem]"/>
+                  </div>
+                </div>
+              </div>
+
+              <!-- room number field -->
+              <div class="mb-3">
+                <label class="form-label" for="rno">Room No:</label>
+                <input type="text" id="rno" name="complaint[roomno]" placeholder="Enter Room no" required
+                  class="form-control">
+              </div>
+
+              <!-- floor number field -->
+              <div class="mb-3">
+                <label class="form-label" for="rno">Floor No:</label>
+                <input type="text" id="rno" name="complaint[floorno]" placeholder="Enter Floor no" required
+                  class="form-control">
+              </div>
+
+
+              <!-- Description field -->
+              <div class="mb-3">
+                <label class="form-label" for="description">Description: </label>
+                <textarea id="description" name="complaint[description]" placeholder="description"
+                  class="form-control"></textarea>
+              </div>
+
+              <!-- File upload -->
+              <div class="input-group">
+                <input type="file" class="form-control" id="inputGroupFile04" name="complaint[file]"
+                  aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="side">
+    <div class="anc-item">
+      <h1>Announcements</h1>
+      <div class="anc-link">
+        <ul>
+          <li><a href="#"><span><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 9h-2V5h2v6zm0 4h-2v-2h2v2z" />
+                </svg></span>MBBS Admission 2024-2025</a></li>
+          <li><a href="#"><span><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 9h-2V5h2v6zm0 4h-2v-2h2v2z" />
+                </svg></span>New addmisson file content hii </a></li>
+          <li><a href="#"><span><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 9h-2V5h2v6zm0 4h-2v-2h2v2z" />
+                </svg></span>New addmisson file content hii </a></li>
+          <li><a href="#"><span><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 9h-2V5h2v6zm0 4h-2v-2h2v2z" />
+                </svg></span>New addmisson file content hii </a></li>
+          <li><a href="#"><span><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 9h-2V5h2v6zm0 4h-2v-2h2v2z" />
+                </svg></span>New addmisson file content hii </a></li>
+          <li><a href="#"><span><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 9h-2V5h2v6zm0 4h-2v-2h2v2z" />
+                </svg></span>New addmisson file content hii </a></li>
+          <li><a href="#"><span><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 9h-2V5h2v6zm0 4h-2v-2h2v2z" />
+                </svg></span>New addmisson file content hii </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
